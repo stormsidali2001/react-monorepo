@@ -16,7 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "nuke": "rm -rf node_modules && rm -f yarn.lock"
+    "nuke": "rm -rf node_modules && rm -f yarn.lock",
+    "scan": "componly scan"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,5 +33,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@componly/cli": "^1.18.0",
+    "axios": "^1.4.0"
   }
 }
