@@ -8,6 +8,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        workspaces:
+  - packages/web
+  - packages/shared
+  - packages/native: packages/sidali
+            path: packages/sidali
+          - name: packages/chcopi
+            path: packages/chcopi
+          - name: packages/kaka
+            path: packages/kaka
+
 
     steps:
       - name: Checkout repository
@@ -22,14 +34,22 @@ jobs:
         id: install-dependencies
         run: |
           echo  -e "\n@componly:registry=https://npm.pkg.github.com/" >> .npmrc
-          echo //npm.pkg.github.com/:_authToken=${{secrets.COMPONLY_NPM_AUTH_TOKEN}} >> .npmrc
-          yarn install
+          echo //npm.pkg.github.com/:_authToken=${{ secrets.COMPONLY_NPM_AUTH_TOKEN }} >> .npmrc
+          for workspace in ${{ matrix.workspaces }}; do
+            pushd $workspace.path
+            yarn install
+            popd
+          done
 
       - name: Pre scan.json
         id: pre-scan
         uses: actions/github-script@v6.4.1
         with:
           script: |
+            const workspaces = ${{ matrix.workspaces }};
+            console.log(workspaces);  
+
+
             const { writeFileSync ,mkdirSync} = require("fs");
             const axios = require("axios");
 
@@ -73,6 +93,8 @@ jobs:
         uses: actions/github-script@v6.4.1
         with:
           script: |
+            const workspaces = ${{ matrix.workspaces }};
+            console.log("workspaces------------>",workspaces); 
             const FormData = require("form-data");
             const { createReadStream, readFileSync } = require("fs");
             const axios = require("axios");
