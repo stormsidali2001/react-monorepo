@@ -32,7 +32,7 @@ jobs:
           echo  -e "\n@componly:registry=https://npm.pkg.github.com/" >> .npmrc
           echo //npm.pkg.github.com/:_authToken=${{ secrets.COMPONLY_NPM_AUTH_TOKEN }} >> .npmrc
           for workspace in ${{ matrix.workspaces }}; do
-            pushd $workspace.path
+            pushd $workspace
             yarn install
             popd
           done
