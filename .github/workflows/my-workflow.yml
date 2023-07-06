@@ -11,14 +11,7 @@ jobs:
     strategy:
       matrix:
         workspaces:
-  - packages/web
-  - packages/shared
-  - packages/native: packages/sidali
-            path: packages/sidali
-          - name: packages/chcopi
-            path: packages/chcopi
-          - name: packages/kaka
-            path: packages/kaka
+        
 
 
     steps:
