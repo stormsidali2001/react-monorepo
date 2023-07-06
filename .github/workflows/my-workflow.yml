@@ -13,8 +13,8 @@ jobs:
         matrix:
           workspaces:
           - packages/web
-          - packages/shared
-          - packages/native
+          - packages/shared
+          - packages/native
            
 
 
@@ -83,7 +83,7 @@ jobs:
 
       - name: scan
         id: componly-scan
-        run: yarn scan --design-systems-path ./.componly/ds.json
+        run: yarn scan --design-systems-path ${{ matrix.workspaces }}/.componly/ds.json
 
       - name: Post scan.json
         id: post-scan
