@@ -4,12 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "nuke": "rm -rf node_modules && rm -f yarn.lock"
+    "nuke": "rm -rf node_modules && rm -f yarn.lock",
+    "scan": "componly scan"
   },
   "dependencies": {
     "react": "^16.9.0"
   },
   "peerDependencies": {
     "react": "^16.9.0"
+  },
+  "devDependencies": {
+    "@componly/cli": "^1.18.0",
+    "axios": "^1.4.0"
   }
 }
