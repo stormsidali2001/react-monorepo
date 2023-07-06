@@ -31,7 +31,8 @@
     ]
   },
   "scripts": {
-    "nuke": "yarn workspaces run nuke && rm -rf node_modules && rm -f yarn.lock"
+    "nuke": "yarn workspaces run nuke && rm -rf node_modules && rm -f yarn.lock",
+    "scan": "componly scan"
   },
   "devDependencies": {}
 }
