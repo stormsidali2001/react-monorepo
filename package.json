@@ -34,5 +34,7 @@
     "nuke": "yarn workspaces run nuke && rm -rf node_modules && rm -f yarn.lock",
     "scan": "componly scan"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@componly/cli": "^1.18.0"
+  }
 }
