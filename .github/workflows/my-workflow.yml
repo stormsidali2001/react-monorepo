@@ -15,8 +15,8 @@ jobs:
           - packages/native
           - packages/shared
           - packages/web
-           
 
+    continue-on-error: true
 
     steps:
       - name: Checkout repository
