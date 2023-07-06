@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@componly/cli": "^1.18.0",
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "storybook": "^7.0.26"
   }
 }
