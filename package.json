@@ -35,6 +35,7 @@
     "scan": "componly scan"
   },
   "devDependencies": {
-    "@componly/cli": "^1.18.0"
+    "@componly/cli": "^1.18.0",
+    "axios": "^1.4.0"
   }
 }
