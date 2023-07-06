@@ -16,7 +16,8 @@
     "nuke": "npm-run-all clean:* nuke:*",
     "nuke:android": "rm -rf android/app/build && rm -rf android/.idea && rm -rf android/.gradle",
     "nuke:ios": "rm -rf ios/build && rm -rf ios/Pods && rm -f ios/Podfile.lock && rm -rf ios/App.xcworkspace",
-    "nuke:node": "rm -rf node_modules && rm -f yarn.lock"
+    "nuke:node": "rm -rf node_modules && rm -f yarn.lock",
+    "scan": "componly scan"
   },
   "dependencies": {
     "@demo/shared": "0.0.1",
@@ -34,7 +35,9 @@
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.4",
     "npm-run-all": "^4.1.5",
-    "react-test-renderer": "16.9.0"
+    "react-test-renderer": "16.9.0",
+    "@componly/cli": "^1.18.0",
+    "axios": "^1.4.0"
   },
   "jest": {
     "preset": "react-native"
