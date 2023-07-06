@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - master
 
 jobs:
   build:
@@ -11,9 +12,6 @@ jobs:
     strategy:
       matrix:
         workspaces:
-  - packages/web
-  - packages/shared
-  - packages/native
 
 
     steps:
