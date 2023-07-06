@@ -9,12 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        workspaces:
-                - packages/web
-                - packages/shared
-                - packages/native
 
 
     steps:
