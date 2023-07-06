@@ -42,7 +42,7 @@ jobs:
         uses: actions/github-script@v6.4.1
         with:
           script: |
-            const workspaces = ${{ matrix.workspaces }};
+            const workspaces = "${{ matrix.workspaces }}";
             console.log(workspaces);  
 
 
