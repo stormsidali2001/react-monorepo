@@ -83,7 +83,7 @@ jobs:
 
       - name: scan
         id: componly-scan
-        run: yarn scan --design-systems-path  /${{ matrix.workspaces }}/.componly/ds.json --config-path  /${{ matrix.workspaces }}/componly.config.json
+        run: yarn scan --design-systems-path  ./${{ matrix.workspaces }}/.componly/ds.json --config-path  ./${{ matrix.workspaces }}/componly.config.json
 
       - name: Post scan.json
         id: post-scan
