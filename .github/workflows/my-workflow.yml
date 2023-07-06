@@ -12,9 +12,10 @@ jobs:
     strategy:
         matrix:
           workspaces:
-            - ./packages/web
-            - ./packages/shared
-            - ./packages/native
+          - packages/web
+          - packages/shared
+          - packages/native
+           
 
 
     steps:
@@ -72,8 +73,8 @@ jobs:
                   },
                 }
               );
-              mkdirSync("./.componly")
-              writeFileSync("./.componly/ds.json", JSON.stringify(response.data, undefined, 2))
+              mkdirSync(workspaces+"/.componly")
+              writeFileSync(workspaces+"/.componly/ds.json", JSON.stringify(response.data, undefined, 2))
 
               console.log(response.status);
             }
